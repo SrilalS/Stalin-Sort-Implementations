@@ -1,0 +1,31 @@
+# Compiled files
+*.exe
+*.o
+*.out
+*.class
+*.pyc
+*.pyo
+__pycache__/
+
+# C/C++ compiled executables
+C/stalin_sort
+CPP/stalin_sort
+
+# C# build artifacts
+CSharp/bin/
+CSharp/obj/
+
+# JavaScript/TypeScript compiled files
+TypeScript/*.js
+TypeScript/*.js.map
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
