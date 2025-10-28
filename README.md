@@ -2,9 +2,33 @@
 
 This repository implements the Stalin sort algorithm in multiple programming languages.
 
-## What is Stalin Sort?
+## Overview
 
-Stalin Sort is a humorous, meme-based "sorting algorithm" that's not meant for practical use but rather as a joke among programmers. The algorithm works by iterating through a list and removing any element that is smaller than the previous element, similar to how Stalin "removed" people from photographs.
+**Stalin Sort** is a deterministic, order-preserving filtering algorithm designed to extract the longest non-decreasing subsequence from a given sequence.  
+Unlike traditional comparison-based sorting algorithms that reorder elements through partitioning or merging, Stalin Sort performs a **single linear pass** and **retains only the elements** that maintain a non-decreasing order relative to the last accepted element.
+
+Formally, given an input sequence \( A = [a_1, a_2, \dots, a_n] \), the algorithm constructs an output sequence \( S \) such that:
+
+\[
+S = [a_{i_1}, a_{i_2}, \dots, a_{i_k}] \quad \text{where} \quad a_{i_1} \leq a_{i_2} \leq \dots \leq a_{i_k}
+\]
+and  
+\[
+i_1 < i_2 < \dots < i_k
+\]
+
+---
+
+## Algorithm Description
+
+### Procedure
+
+1. Initialize an empty list \( S \).
+2. Insert the first element of \( A \) into \( S \).
+3. For each subsequent element \( a_i \in A \):
+   - If \( a_i \geq S[-1] \), append \( a_i \) to \( S \).
+   - Otherwise, discard \( a_i \).
+4. Return \( S \) as the resulting non-decreasing sequence.
 
 ### Algorithm Pseudocode
 
