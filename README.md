@@ -7,15 +7,21 @@ This repository implements the Stalin sort algorithm in multiple programming lan
 **Stalin Sort** is a deterministic, order-preserving filtering algorithm designed to extract the longest non-decreasing subsequence from a given sequence.  
 Unlike traditional comparison-based sorting algorithms that reorder elements through partitioning or merging, Stalin Sort performs a **single linear pass** and **retains only the elements** that maintain a non-decreasing order relative to the last accepted element.
 
-Formally, given an input sequence \( A = [a_1, a_2, \dots, a_n] \), the algorithm constructs an output sequence \( S \) such that:
+Formally, given an input sequence:
 
-\[
-S = [a_{i_1}, a_{i_2}, \dots, a_{i_k}] \quad \text{where} \quad a_{i_1} \leq a_{i_2} \leq \dots \leq a_{i_k}
-\]
-and  
-\[
-i_1 < i_2 < \dots < i_k
-\]
+A = [a1, a2, ..., an]
+
+the algorithm constructs an output sequence:
+
+S = [a_i1, a_i2, ..., a_ik]  
+
+such that:
+
+a_i1 ≤ a_i2 ≤ ... ≤ a_ik  
+
+and the indices satisfy:
+
+i1 < i2 < ... < ik
 
 ---
 
@@ -23,12 +29,28 @@ i_1 < i_2 < \dots < i_k
 
 ### Procedure
 
-1. Initialize an empty list \( S \).
-2. Insert the first element of \( A \) into \( S \).
-3. For each subsequent element \( a_i \in A \):
-   - If \( a_i \geq S[-1] \), append \( a_i \) to \( S \).
-   - Otherwise, discard \( a_i \).
-4. Return \( S \) as the resulting non-decreasing sequence.
+1. Initialize an empty list `S`.
+2. Insert the first element of `A` into `S`.
+3. For each subsequent element `a_i` in `A`:
+   - If `a_i >= S[-1]`, append `a_i` to `S`.
+   - Otherwise, discard `a_i`.
+4. Return `S` as the resulting non-decreasing sequence.
+
+### Example
+
+Input:  
+A = [3, 1, 4, 2, 5]
+
+Process:  
+- Start with S = [3]  
+- 1 < 3 → discard  
+- 4 ≥ 3 → keep → S = [3, 4]  
+- 2 < 4 → discard  
+- 5 ≥ 4 → keep → S = [3, 4, 5]
+
+Output:  
+S = [3, 4, 5]
+
 
 ### Algorithm Pseudocode
 
