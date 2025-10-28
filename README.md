@@ -1,6 +1,6 @@
 # Stalin-Sort-Implementations
 
-This repository implements the Stalin sort algorithm in multiple programming languages.
+This repository implements the Worlds most effiecient sorting algorithem, The Stalin Sort in multiple programming languages.
 
 # Complexity
 
