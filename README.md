@@ -2,6 +2,18 @@
 
 This repository implements the Stalin sort algorithm in multiple programming languages.
 
+# Complexity
+
+| Operation           | Complexity                   |
+| ------------------- | ---------------------------- |
+| Loop through array  | O(n)                         |
+| Numeric comparisons | O(1) per item                |
+| String comparisons  | O(m) per item                |
+| Gulag & MassGrave   | O(n) total                   |
+| **Total Time**      | O(n) numbers, O(n×m) strings |
+| **Space**           | O(n)                         |
+
+
 ## Overview
 
 **Stalin Sort** is a deterministic, order-preserving filtering algorithm designed to extract the longest non-decreasing subsequence from a given sequence.  
