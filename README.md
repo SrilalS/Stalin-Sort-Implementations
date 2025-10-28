@@ -23,7 +23,7 @@ A = [a1, a2, ..., an]
 the algorithm constructs three output sequences:
 
 S = [a_i1, a_i2, ..., a_ik]  (sorted array)
-G = [a_j1, a_j2, ..., a_jm]  (gulag, where m ≤ max(1, n/10))
+G = [a_j1, a_j2, ..., a_jm]  (gulag, where m ≤ max(1, floor(n/10)))
 M = [a_l1, a_l2, ..., a_lp]  (mass grave)
 
 such that:
@@ -42,7 +42,7 @@ i1 < i2 < ... < ik
 
 1. Initialize three lists: `sorted_arr`, `gulag`, and `mass_grave`.
 2. Insert the first element of `A` into `sorted_arr`.
-3. Calculate the gulag threshold: `threshold = max(1, |A| / 10)`
+3. Calculate the gulag threshold: `threshold = max(1, floor(|A| / 10))`
 4. For each subsequent element `a_i` in `A`:
    - If `a_i >= sorted_arr[-1]`, append `a_i` to `sorted_arr`.
    - Otherwise, append `a_i` to `gulag`.
@@ -57,7 +57,7 @@ A = [3, 1, 4, 2, 5]
 
 Process:  
 - Start with sorted_arr = [3], gulag = [], mass_grave = []
-- Threshold = max(1, 5/10) = 1
+- Threshold = max(1, floor(5/10)) = max(1, 0) = 1
 - 1 < 3 → add to gulag → gulag = [1]
 - 4 ≥ 3 → keep → sorted_arr = [3, 4]  
 - 2 < 4 → add to gulag → gulag = [1, 2]
